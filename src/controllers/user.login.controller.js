@@ -10,11 +10,18 @@ const loginUser = async (req, res) => {
 
         // Check if user exists and password is correct
         if (user && userService.findUserByPassword(password, user.password)) {
+
+            // Check if the user is banned
+            if(user.isBanned == true){
+                return res.status(403).json({ message: 'User is banned. Login not allowed.' });
+            }
+
             // Generate JWT token....[user token]🚀
             const token = jwt.sign({ username: user.username, userId: user._id }, 'your-secret-key', {
                 // Assign Token expired time
                 expiresIn: '1h',
             });
+            
             // Assign Response UserID & User Token...🔥
             return res.status(201).json({ userId: user._id ,  Authorization: token });
 
@@ -29,16 +36,6 @@ const loginUser = async (req, res) => {
 
 };
 
-const banUser = async (req, res) => {
-    const { userId } = req.params;
-
-    // Update user status to banned...💥
-    await userService.updateUserStatusToBanned(userId);
-
-    return res.json({ message: 'User banned successfully' });
-};
-
 module.exports = {
     loginUser,
-    banUser,
 };

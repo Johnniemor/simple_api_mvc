@@ -8,7 +8,7 @@ paths:
   /api/users/register:
     post:
       tags:
-        - User
+        - Authentication
       summary: Register a new user
       requestBody:
         required: true
@@ -31,7 +31,7 @@ paths:
   /api/users/login:
     post:
       tags:
-        - User
+        - Authentication
       summary: Login an user
       requestBody:
         required: true
@@ -52,17 +52,60 @@ paths:
   /api/users/findManyUser:
     get:
       tags:
-        - User
+        - Find User
       summary: Find many user account
       responses:
         '200':
           description: 
 
+# Find one user by ID ....🔥
   /api/users/findOne/{userId}:
     get:
       tags:
-        - User
+        - Find User
       summary: Find one user by Id
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type : string
+      responses: 
+        '200':
+          description: 
+
+# Ban User by Id 
+  /api/users/ban/{userId}:
+    delete:
+      tags:
+        - Ban User
+      summary: Ban User by Id
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type : string
+      responses: 
+        '200':
+          description: 
+
+# Find many ban user
+  /api/users/ban/findMany:
+    get:
+      tags:
+        - Ban User
+      summary: Find many ban user account
+      responses:
+        '200':
+          description: 
+
+# UnBan User by Id 
+  /api/users/unBan/{userId}:
+    patch:
+      tags:
+        - Ban User
+      summary: UnBan User by Id
       parameters:
         - name: userId
           in: path

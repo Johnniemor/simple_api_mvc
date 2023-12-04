@@ -1,15 +1,17 @@
-## Introduction
+##Introduction
 
-    this project is making a user api (CRUD) => Create , Read , Update , Delete
-    use to study case
+    This project shared how to build an API (MVC Pattern) 🚀
+    
+    Simple User API => CRUD 
+    https://drive.google.com/file/d/1jsnljLtVjmTfBbpMaSyQM4KPImkQ_Lj1/view?usp=sharing
 
-## Pattern
+##Pattern
 
     - Node JS
     - MongoDB (NonSQL)
     - Swagger GUI
 
-## Packages
+##Packages
 
     - express 
     - mongoose 
