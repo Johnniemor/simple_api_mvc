@@ -1,5 +1,4 @@
 const userService = require("../service/user.register.service");
-const User = require("../model/user.model")
 
 const registerUser = async (req, res) => {
   try {
@@ -15,7 +14,7 @@ const registerUser = async (req, res) => {
 
     // Create a new user
     await userService.createUser(username, email, password);
-    return res.json({ message: 'User registered successfully' , username , email , password });
+    return res.json({ message: 'User registered successfully' });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Internal Server Error' });
