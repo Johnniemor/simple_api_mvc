@@ -2,16 +2,29 @@
 
     This project shared how to build an API (MVC Pattern) 🚀
     
-    Simple User API => CRUD 
-    
+    Simple User API => CRUD for Case Study .....🧑‍🎓
+
+    You can look at this picture on this link 👇👇👇
     https://drive.google.com/file/d/1jsnljLtVjmTfBbpMaSyQM4KPImkQ_Lj1/view?usp=sharing
+==========================================================================================
+## Pattern & Tech Strack
+    [ Pattern ]
+    --------------------------------------------------
+    # MVC Pattern => Model - View - Controller
+    ===============================================
+    [ Tech Strack OR Tools]
+    --------------------------------------------------
+    # Node JS [Framework]
+    # Swagger UI
+    # MongoDB [Non SQL DataBase]
+=========================================================================================
+## Get Started
 
-##Pattern
-
-    - Node JS
-    - MongoDB (NonSQL)
-    - Swagger GUI
-
+    [ Before run project ]
+    ------------------------------------------
+    use this command for install node module....🚀
+## npm install
+    
 ##Packages
 
     - express 
