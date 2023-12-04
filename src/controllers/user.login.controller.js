@@ -15,8 +15,8 @@ const loginUser = async (req, res) => {
                 // Assign Token expired time
                 expiresIn: '1h',
             });
-
-            return res.status(201).json({ Authorization: `Bearer ${token}` });
+            // Assign Response UserID & User Token...🔥
+            return res.status(201).json({ userId: user._id ,  Authorization: token });
 
         } else {
             return res.status(404).json({ message: 'User not found' });

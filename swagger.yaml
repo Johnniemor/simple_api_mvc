@@ -53,8 +53,23 @@ paths:
     get:
       tags:
         - User
-      summary: Find many user account.
+      summary: Find many user account
       responses:
+        '200':
+          description: 
+
+  /api/users/findOne/{userId}:
+    get:
+      tags:
+        - User
+      summary: Find one user by Id
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type : string
+      responses: 
         '200':
           description: 
 
