@@ -1,7 +1,8 @@
 openapi: 3.0.0
 info:
-  title: Simple API
+  title: Simple API [MVC Pattern]
   version: 1.0.0
+  
 paths:
 # Register a new user ....🚀
   /api/users/register:
@@ -46,5 +47,16 @@ paths:
       responses:
         '201':
           description: 
+
+# Find many user ....🚀
+  /api/users/findManyUser:
+    get:
+      tags:
+        - User
+      summary: Find many user account.
+      responses:
+        '200':
+          description: 
+
           
                 

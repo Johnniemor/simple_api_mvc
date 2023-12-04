@@ -1,12 +1,11 @@
 const userModel = require("../model/user.model");
-const bcrypt = require('bcrypt');
 
 const findUserByUsername = async (username) => {
     return await userModel.findOne({ username });
 };
 
-const comparePasswords = (password, hashedPassword) => {
-    return bcrypt.compareSync(password, hashedPassword);
+const findUserByPassword = async (password) => {
+    return await userModel.findOne({ password });
 };
 
 const updateUserStatusToBanned = async (userId) => {
@@ -15,6 +14,6 @@ const updateUserStatusToBanned = async (userId) => {
 
 module.exports = {
     findUserByUsername,
-    comparePasswords,
+    findUserByPassword,
     updateUserStatusToBanned,
 };

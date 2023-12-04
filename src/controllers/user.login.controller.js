@@ -9,7 +9,7 @@ const loginUser = async (req, res) => {
         const user = await userService.findUserByUsername(username);
 
         // Check if user exists and password is correct
-        if (user && userService.comparePasswords(password, user.password)) {
+        if (user && userService.findUserByPassword(password, user.password)) {
             // Generate JWT token....[user token]🚀
             const token = jwt.sign({ username: user.username, userId: user._id }, 'your-secret-key', {
                 // Assign Token expired time

@@ -8,10 +8,10 @@ const checkExistingUser = async (username, email) => {
 
 // Create new user request username , email and password ....🚀
 const createUser = async (username, email, password) => {
-      // Hash the password
-      const hashedPassword = bcrypt.hashSync(password, 10);
-    const newUser = new userModel({ username, email, password: hashedPassword });
+
+    const newUser = new userModel({ username, email, password });
     return await newUser.save();
+    
 };
 
 module.exports = {
